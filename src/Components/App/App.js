@@ -50,7 +50,6 @@ export default function App(props) {
     };
 
     return (
-
         <div>
             <div id={"container"} className={"container"}>
                 <h1 className={"gameName"} id={"gameName"}> Ball killer</h1>
