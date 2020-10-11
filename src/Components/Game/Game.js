@@ -44,6 +44,10 @@ export default class Game extends Component {
         super(props, Game.defaultProps);
         this.open = false;
         this.changeImage = this.changeImage.bind(this);
+        this.updateIntervalsTarget = this.updateIntervalsTarget.bind(this);
+        this.incrementInterval = this.incrementInterval.bind(this);
+        this.resetInterval = this.resetInterval.bind(this);
+        this.clearGame = this.clearGame.bind(this);
         //*
         this.interval = this.interval.bind(this);
         this.startNewMovement = this.startNewMovement.bind(this);
@@ -118,40 +122,55 @@ export default class Game extends Component {
 
 //*
     interval() {
-        this.setState({
-            intervalCounter: this.state.intervalCounter + 1
-        });
+        this.incrementInterval();
         if (this.state.intervalCounter === this.state.intervalsTarget - 1) {
-            this.setState({
-                intervalCounter: 0,
-                ActionCounter: this.state.ActionCounter + 1,
-                initPose: null,
-                isActionDone: false
-            });
+            this.resetInterval();
             if (!this.state.isActionDone) {
-                if (this.state.lives === 1) {
-                    clearInterval(this.state.intervalID);
-                    history.push("/");
-                    window.location.reload(false);
-                }
-                this.setState({
-                    lives: this.state.lives - 1,
-                    gameOver: true
-                });
+                if (this.state.lives === 1)
+                    this.clearGame();
+                this.setState({lives: this.state.lives - 1,});
                 this.notifyFailed();
             }
             this.startNewMovement();
         }
         //speed pace
-        if (this.state.ActionCounter === this.state.ActionsTarget) {
-            let updateIntervalsTarget = this.state.intervalsTarget - 1;
-            if (this.state.intervalsTarget === 1)
-                updateIntervalsTarget = 1;
-            this.setState({
-                intervalsTarget: updateIntervalsTarget,
-                ActionCounter: 0
-            });
-        }
+        if (this.state.ActionCounter === this.state.ActionsTarget)
+            this.updateIntervalsTarget();
+    }
+
+    updateIntervalsTarget() {
+        let updateIntervalsTarget = this.state.intervalsTarget - 1;
+        if (this.state.intervalsTarget === 1)
+            updateIntervalsTarget = 1;
+        this.setState({
+            intervalsTarget: updateIntervalsTarget,
+            ActionCounter: 0
+        });
+    }
+
+    incrementInterval() {
+        this.setState({
+            intervalCounter: this.state.intervalCounter + 1
+        });
+    }
+
+    resetInterval() {
+        this.setState({
+            intervalCounter: 0,
+            ActionCounter: this.state.ActionCounter + 1,
+            initPose: null,
+            isActionDone: false
+        });
+    }
+
+    clearGame() {
+        this.setState({
+            gameOver: true,
+            lives: this.state.lives - 1,
+        });
+        clearInterval(this.state.intervalID);
+        history.push("/");
+        window.location.reload(false);
     }
 
     async setupCamera() {
