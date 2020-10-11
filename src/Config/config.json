@@ -1,0 +1,31 @@
+{
+  "Moves": {
+    "left_jab": "left_jab",
+    "right_jab": "right_jab",
+    "pump_fake": "pump_fake",
+    "right_crossover": "right_crossover",
+    "left_crossover": "left_crossover",
+    "right_in_and_out": "right_in_and_out",
+    "left_in_and_out": "left_in_and_out",
+    "right_ball_protection": "right_ball_protection",
+    "left_ball_protection": "left_ball_protection"
+  },
+  "Positions": {
+    "leftEye": "leftEye",
+    "rightEye": "rightEye",
+    "leftEar": "leftEar",
+    "rightEar": "rightEar",
+    "leftShoulder": "leftShoulder",
+    "rightShoulder": "rightShoulder",
+    "leftElbow": "leftElbow",
+    "rightElbow": "rightElbow",
+    "leftWrist": "leftWrist",
+    "rightWrist": "rightWrist",
+    "leftHip": "leftHip",
+    "rightHip": "rightHip",
+    "leftKnee": "leftKnee",
+    "rightKnee": "rightKnee",
+    "leftAnkle": "leftAnkle",
+    "rightAnkle": "rightAnkle"
+  }
+}
