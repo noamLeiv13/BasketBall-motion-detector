@@ -1,0 +1,57 @@
+
+.container {
+    text-align: center;
+    background-image: url(../../resources/backgrounds/basketball_background.png);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.headers{
+    display: flex;
+    justify-content: space-between;
+}
+
+#videoNoShow {
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    display: none !important;
+}
+
+.webcam {
+    position: absolute;
+    top: 10%;
+    right: 3%;
+    height: 35%;
+    width: 26%;
+}
+
+
+#Action {
+    position: absolute;
+    bottom: 10%;
+    right: 3%;
+    height: 35%;
+    width: 26%;
+    background-color: #FFFFFF;
+}
+
+
+.lineDiv {
+    float: left;
+}
+
+
+.gameName {
+    position: fixed;
+    left: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px
+}
+
+
+
