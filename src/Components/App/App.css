@@ -1,0 +1,58 @@
+
+.container {
+    text-align: center;
+    background-image: url(../../resources/backgrounds/basketball_background.png);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.start-game-button {
+    color: #fff;
+    background-color: gray;
+    border-color: gray;
+    position: fixed;
+    top: 48%;
+    left: 39%;
+    height: 40px;
+    width: 320px;
+
+}
+
+
+.timer {
+    position: absolute;
+    justify-content: center;
+}
+
+.timer-wrapper {
+    font-family: "Montserrat";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 25%;
+    left: 38%;
+}
+
+.text {
+    font-family: "Montserrat";
+    color: white;
+    position: center;
+    size: 14px;
+}
+
+.value {
+    font-size: 40px;
+    position: center;
+}
+
+
+.counter {
+    position: absolute;
+    bottom: 10%;
+    right: 3%;
+    height: 35%;
+}
