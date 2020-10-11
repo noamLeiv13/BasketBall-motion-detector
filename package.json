@@ -1,0 +1,41 @@
+{
+  "name": "kinect",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tensorflow-models/posenet": "^2.2.1",
+    "@tensorflow/tfjs": "^2.6.0",
+    "@tensorflow/tfjs-backend-wasm": "^2.6.0",
+    "history": "^5.0.0",
+    "react": "^16.13.1",
+    "react-countdown-circle-timer": "^2.3.7",
+    "react-dom": "^16.13.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "latest",
+    "react-scripts": "3.4.3",
+    "react-toastify": "^6.0.9"
+  },
+  "scripts": {
+    "wasm": "cp node_modules/@tensorflow/tfjs-backend-wasm/dist/tfjs-backend-wasm.wasm ./public",
+    "winwasm": "PowerShell -Command cp node_modules/@tensorflow/tfjs-backend-wasm/dist/tfjs-backend-wasm.wasm ./public -Force",
+    "start": "yarn winwasm && react-scripts start",
+    "build": "yarn winwasm && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
